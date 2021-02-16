@@ -1,4 +1,4 @@
-name: Muni festivities CI
+name: Merqueo Cash Register CI
 on:
   push:
     branches:
