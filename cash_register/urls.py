@@ -14,5 +14,8 @@ urlpatterns = [
     path("available-cash/empty/",
          AvailableCashViewSet.as_view({"get": "empty_register"}),
          name="empty-register"),
+    path("available-cash/current-state/",
+         AvailableCashViewSet.as_view({"get": "current_state"}),
+         name="current_state"),         
     path("", include(router.urls)),
 ]

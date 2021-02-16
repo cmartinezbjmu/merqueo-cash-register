@@ -3,7 +3,6 @@
 # Django
 from django.db import models
 from django.db.models.deletion import CASCADE
-from django.db.models.enums import Choices
 
 
 class CurrencyDenomination(models.Model):
@@ -15,6 +14,7 @@ class CurrencyDenomination(models.Model):
 
 class AvailableCash(models.Model):
     currency_type = models.OneToOneField(CurrencyDenomination,
+                                         to_field='currency_type',
                                          on_delete=models.CASCADE,
                                          related_name="available_currency")
     quantity = models.IntegerField(blank=False, null=False, default=0)
@@ -32,6 +32,7 @@ class PaymentForm(models.Model):
                                 on_delete=models.CASCADE,
                                 related_name="payment_form")
     currency_type = models.ForeignKey(CurrencyDenomination,
+                                      to_field='currency_type',
                                       on_delete=models.CASCADE,
                                       related_name="payment_currency")
     quantity = models.IntegerField(blank=False, null=False, default=0)

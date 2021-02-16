@@ -8,7 +8,7 @@ from .models import *
 class CurrencyDenominationSerializer(serializers.ModelSerializer):
     class Meta:
         model = CurrencyDenomination
-        fields = "__all__"
+        fields = ["currency_type"]
 
 
 class AvailableCashSerializer(serializers.ModelSerializer):
