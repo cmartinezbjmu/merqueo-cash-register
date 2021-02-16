@@ -8,11 +8,15 @@ from django.db.models.enums import Choices
 class CurrencyDenomination(models.Model):
   currency_type = models.IntegerField(unique=True)
 
+  def __str__(self):
+    return self.currency_type.__str__()
+
 
 class AvailableCash(models.Model):
-  currency_type = models.ForeignKey(CurrencyDenomination, on_delete=CASCADE, related_name="available_currency")
+  currency_type = models.OneToOneField(CurrencyDenomination, on_delete=models.CASCADE, related_name="available_currency")
   quantity = models.IntegerField(blank=False, null=False, default=0)
   updated_at = models.DateTimeField(auto_now=True)
+
 
 class Payment(models.Model):
   amount = models.IntegerField(blank=False, null=False, default=0)
@@ -21,8 +25,8 @@ class Payment(models.Model):
     
 
 class PaymentForm(models.Model):
-  payment = models.ForeignKey(Payment, on_delete=CASCADE, related_name="payment_form")
-  currency_type = models.ForeignKey(CurrencyDenomination, on_delete=CASCADE, related_name="payment_currency")
+  payment = models.ForeignKey(Payment, on_delete=models.CASCADE, related_name="payment_form")
+  currency_type = models.ForeignKey(CurrencyDenomination, on_delete=models.CASCADE, related_name="payment_currency")
   quantity = models.IntegerField(blank=False, null=False, default=0)
 
 

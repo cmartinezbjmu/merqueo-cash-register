@@ -19,6 +19,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("api/", include('cash_register.urls')),
 ]
 
 # If debug, activate django debug toolbar

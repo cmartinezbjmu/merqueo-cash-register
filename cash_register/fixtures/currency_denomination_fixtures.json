@@ -1,0 +1,72 @@
+[
+    {
+        "pk": 1,
+        "model": "cash_register.CurrencyDenomination",
+        "fields": {
+            "currency_type": 100000
+        }
+    },
+    {
+        "pk": 2,
+        "model": "cash_register.CurrencyDenomination",
+        "fields": {
+            "currency_type": 50000
+        }
+    },
+    {
+        "pk": 3,
+        "model": "cash_register.CurrencyDenomination",
+        "fields": {
+            "currency_type": 20000
+        }
+    },
+    {
+        "pk": 4,
+        "model": "cash_register.CurrencyDenomination",
+        "fields": {
+            "currency_type": 10000
+        }
+    },
+    {
+        "pk": 5,
+        "model": "cash_register.CurrencyDenomination",
+        "fields": {
+            "currency_type": 5000
+        }
+    },
+    {
+        "pk": 6,
+        "model": "cash_register.CurrencyDenomination",
+        "fields": {
+            "currency_type": 1000
+        }
+    },
+    {
+        "pk": 7,
+        "model": "cash_register.CurrencyDenomination",
+        "fields": {
+            "currency_type": 500
+        }
+    },
+    {
+        "pk": 8,
+        "model": "cash_register.CurrencyDenomination",
+        "fields": {
+            "currency_type": 200
+        }
+    },    
+    {
+        "pk": 9,
+        "model": "cash_register.CurrencyDenomination",
+        "fields": {
+            "currency_type": 100
+        }
+    },
+    {
+        "pk": 10,
+        "model": "cash_register.CurrencyDenomination",
+        "fields": {
+            "currency_type": 50
+        }
+    }
+]
