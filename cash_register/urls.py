@@ -1,5 +1,3 @@
-
-
 from django.urls import path, include
 
 # Django Rest Framework
@@ -13,5 +11,8 @@ router.register(r"available-cash",
                 basename="available-cash")
 
 urlpatterns = [
+    path("available-cash/empty/",
+         AvailableCashViewSet.as_view({"get": "empty_register"}),
+         name="empty-register"),
     path("", include(router.urls)),
 ]
