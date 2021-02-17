@@ -10,8 +10,22 @@ class CurrencyDenominationSerializer(serializers.ModelSerializer):
         model = CurrencyDenomination
         fields = ["currency_type"]
 
-
 class AvailableCashSerializer(serializers.ModelSerializer):
     class Meta:
         model = AvailableCash
         fields = "__all__"
+
+class PaymentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Payment
+        fields = ["amount", "total_payment"]
+
+class PaymentFormSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PaymentForm
+        fields = ["currency_type", "quantity"]        
+
+class PaymentFormCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PaymentForm
+        fields = "__all__"         

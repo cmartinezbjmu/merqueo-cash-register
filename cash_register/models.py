@@ -35,7 +35,7 @@ class PaymentForm(models.Model):
                                       to_field='currency_type',
                                       on_delete=models.CASCADE,
                                       related_name="payment_currency")
-    quantity = models.IntegerField(blank=False, null=False, default=0)
+    quantity = models.IntegerField(blank=False, null=False)
 
 
 class TransactionLog(models.Model):
