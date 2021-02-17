@@ -29,3 +29,8 @@ class PaymentFormCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = PaymentForm
         fields = "__all__"         
+
+class TransactionLogSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TransactionLog
+        fields = "__all__"                 

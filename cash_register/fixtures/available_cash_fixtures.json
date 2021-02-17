@@ -1,0 +1,82 @@
+[
+    {
+        "pk": 1,
+        "model": "cash_register.AvailableCash",
+        "fields": {
+            "currency_type_id": 100000,
+            "updated_at": "2021-02-16T23:43:08.935553-05:00"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "cash_register.AvailableCash",
+        "fields": {
+            "currency_type_id": 50000,
+            "updated_at": "2021-02-16T23:43:08.935553-05:00"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "cash_register.AvailableCash",
+        "fields": {
+            "currency_type_id": 20000,
+            "updated_at": "2021-02-16T23:43:08.935553-05:00"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "cash_register.AvailableCash",
+        "fields": {
+            "currency_type_id": 10000,
+            "updated_at": "2021-02-16T23:43:08.935553-05:00"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "cash_register.AvailableCash",
+        "fields": {
+            "currency_type_id": 5000,
+            "updated_at": "2021-02-16T23:43:08.935553-05:00"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "cash_register.AvailableCash",
+        "fields": {
+            "currency_type_id": 1000,
+            "updated_at": "2021-02-16T23:43:08.935553-05:00"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "cash_register.AvailableCash",
+        "fields": {
+            "currency_type_id": 500,
+            "updated_at": "2021-02-16T23:43:08.935553-05:00"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "cash_register.AvailableCash",
+        "fields": {
+            "currency_type_id": 200,
+            "updated_at": "2021-02-16T23:43:08.935553-05:00"
+        }
+    },    
+    {
+        "pk": 9,
+        "model": "cash_register.AvailableCash",
+        "fields": {
+            "currency_type_id": 100,
+            "updated_at": "2021-02-16T23:43:08.935553-05:00"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "cash_register.AvailableCash",
+        "fields": {
+            "currency_type_id": 50,
+            "updated_at": "2021-02-16T23:43:08.935553-05:00"
+        }
+    }
+]
