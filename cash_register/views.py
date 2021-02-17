@@ -87,7 +87,9 @@ class PaymentFormViewSet(ModelViewSet):
                             status=status_codes.HTTP_400_BAD_REQUEST)
                 self._update_cash_register(request.data["payment_form"], change)
                 self._insert_log(total_payment, request.data["amount"])
-                return Response(change, status=status_codes.HTTP_200_OK)
+                change.append({"total_change": total_payment -
+                                            request.data["amount"]})
+                return Response(change, status=status_codes.HTTP_201_CREATED)
             else:
                 return Response(serializer_payment_form.errors,
                                 status=status_codes.HTTP_400_BAD_REQUEST)

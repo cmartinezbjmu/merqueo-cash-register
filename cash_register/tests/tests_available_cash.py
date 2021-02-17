@@ -1,4 +1,4 @@
-"""Cash register test cases."""
+"""Available cash test cases."""
 
 # Django
 from django.test import TestCase
