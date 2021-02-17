@@ -4,6 +4,7 @@
         "model": "cash_register.AvailableCash",
         "fields": {
             "currency_type_id": 100000,
+            "quantity": 2,
             "updated_at": "2021-02-16T23:43:08.935553-05:00"
         }
     },
@@ -20,6 +21,7 @@
         "model": "cash_register.AvailableCash",
         "fields": {
             "currency_type_id": 20000,
+            "quantity": 5,
             "updated_at": "2021-02-16T23:43:08.935553-05:00"
         }
     },
@@ -28,6 +30,7 @@
         "model": "cash_register.AvailableCash",
         "fields": {
             "currency_type_id": 10000,
+            "quantity": 10,
             "updated_at": "2021-02-16T23:43:08.935553-05:00"
         }
     },
@@ -52,6 +55,7 @@
         "model": "cash_register.AvailableCash",
         "fields": {
             "currency_type_id": 500,
+            "quantity": 2,
             "updated_at": "2021-02-16T23:43:08.935553-05:00"
         }
     },
