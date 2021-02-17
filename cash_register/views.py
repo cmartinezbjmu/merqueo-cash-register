@@ -1,4 +1,4 @@
-
+"""Cash register views."""
 
 # Django Rest Framework
 from rest_framework.viewsets import ModelViewSet
@@ -41,7 +41,7 @@ class AvailableCashViewSet(ModelViewSet):
         query = AvailableCash.objects.all()
         total_amount = self._calc_total_cash(query)
         denominations = AvailableCashSerializer(query, many=True)
-        data = {"denominations": denominations.data, "total": total_amount}
+        data = {"denominations": denominations.data, "total_amount": total_amount}
         return Response(data, status=status_codes.HTTP_200_OK)
 
     def _calc_total_cash(self, query):

@@ -18,7 +18,7 @@ urlpatterns = [
          name="empty-register"),
     path("available-cash/current-state/",
          AvailableCashViewSet.as_view({"get": "current_state"}),
-         name="current_state"),
+         name="current-state"),
     path("logs/search-date/",
          TransactionLogViewSet.as_view({"get": "cash_history"}),
          name="search-date"),         
