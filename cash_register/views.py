@@ -18,12 +18,12 @@ from functools import reduce
 
 @api_view(["GET"])
 def check_status(request):
-  """
-  Simple view function to check the API status
-  Args:
-      request (object): The request object
-  """
-  return Response({"API working"},
+    """
+    Simple view function to check the API status
+    Args:
+        request (object): The request object
+    """
+    return Response({"API working"},
                         status=status_codes.HTTP_200_OK)
 
 class AvailableCashViewSet(ModelViewSet):
@@ -33,7 +33,7 @@ class AvailableCashViewSet(ModelViewSet):
     ...
     Methods:
         perform_update(): Override update method to save transaction log
-        destroy(): Prevent use of delete method 
+        destroy(): Prevent use of delete method
         empty_register(): Empty the cash register
         current_state(): Retrieve cash register current state
         _calc_total_cash(): Private method to calc total amount of transaction
@@ -56,7 +56,7 @@ class AvailableCashViewSet(ModelViewSet):
 
     def destroy(self, request, pk=None):
         """
-        This method prevent use of delete method 
+        This method prevent use of delete method
         """
         raise MethodNotAllowed(method="DELETE")
 
@@ -92,7 +92,7 @@ class AvailableCashViewSet(ModelViewSet):
         ...
         Params
         - query: Query of all Available cash registers
-        """        
+        """
         partial_amount = list(
             map((
                 lambda bill: bill.quantity * bill.currency_type.currency_type),
@@ -109,13 +109,13 @@ class PaymentFormViewSet(ModelViewSet):
     ...
     Methods:
         create(): Create payment register
-        _validate_payment(): Check if the payment format is correct  
+        _validate_payment(): Check if the payment format is correct
         _calc_change(): Calculate change for the customer
         _update_cash_register(): Update cash registers
         _insert_log(): Create a new log register
-        destroy(): Prevent use of delete method 
-        update(): Prevent use of put method 
-        partial_update(): Prevent use of patch method 
+        destroy(): Prevent use of delete method
+        update(): Prevent use of put method
+        partial_update(): Prevent use of patch method
     """
 
     queryset = Payment.objects.all()
@@ -128,7 +128,7 @@ class PaymentFormViewSet(ModelViewSet):
         ...
         Params
         - reques: Costumer payment detail
-        """          
+        """
         total_payment = self._validate_payment(request.data["payment_form"],
                                                request.data["amount"])
         if total_payment:
@@ -171,13 +171,13 @@ class PaymentFormViewSet(ModelViewSet):
 
     def _validate_payment(self, payment_method, amount):
         """
-        This method check if the payment format is correct  
+        This method check if the payment format is correct
 
         ...
         Params
         - payment_method: Costumer payment detail
-        - amount: Cost of the product purchased by the customer 
-        """          
+        - amount: Cost of the product purchased by the customer
+        """
         partial_amount = list(
             map((
                 lambda bill: bill.get("quantity") * bill.get("currency_type")),
@@ -193,7 +193,7 @@ class PaymentFormViewSet(ModelViewSet):
         ...
         Params
         - amount: Cost of the product purchased by the customer 
-        """           
+        """
         current_cash = AvailableCash.objects.filter(
             quantity__gt=0).values_list("currency_type",
                                         "quantity").order_by("-currency_type")
@@ -219,8 +219,8 @@ class PaymentFormViewSet(ModelViewSet):
         ...
         Params
         - payment_method: Costumer payment detail
-        - change: Amount of money to be returned to the customer 
-        """          
+        - change: Amount of money to be returned to the customer
+        """
         denominations_payment = dict((cash["currency_type"], cash["quantity"])
                                      for cash in payment_method)
         denominations_change = dict(
@@ -248,9 +248,9 @@ class PaymentFormViewSet(ModelViewSet):
 
         ...
         Params
-        - total_payment: Amount of money delivered by the customer 
+        - total_payment: Amount of money delivered by the customer
         - amount: Cost of the product purchased by the customer
-        """          
+        """
         TransactionLog.objects.create(transaction_type="income",
                                       amount=total_payment)
         TransactionLog.objects.create(transaction_type="outcome",
@@ -258,19 +258,19 @@ class PaymentFormViewSet(ModelViewSet):
 
     def destroy(self, request, pk=None):
         """
-        This method prevent use of delete method 
+        This method prevent use of delete method
         """
         raise MethodNotAllowed(method="DELETE")
 
     def update(self, request, pk=None):
         """
-        This method prevent use of put method 
+        This method prevent use of put method
         """
         raise MethodNotAllowed(method="PUT")
 
     def partial_update(self, request, pk=None):
         """
-        This method prevent use of pacth method 
+        This method prevent use of pacth method
         """
         raise MethodNotAllowed(method="PATCH")
 
@@ -281,10 +281,10 @@ class TransactionLogViewSet(ModelViewSet):
 
     ...
     Methods:
-        create(): Prevent use of post method 
-        update(): Prevent use of put method 
-        partial_update(): Prevent use of patch method 
-        destroy(): Prevent use of delete method 
+        create(): Prevent use of post method
+        update(): Prevent use of put method
+        partial_update(): Prevent use of patch method
+        destroy(): Prevent use of delete method
         cash_history(): Retrieve cash history transactions
     """
     queryset = TransactionLog.objects.all()
@@ -292,26 +292,26 @@ class TransactionLogViewSet(ModelViewSet):
 
     def create(self, request):
         """
-        This method prevent use of post method 
-        """        
+        This method prevent use of post method
+        """
         raise MethodNotAllowed(method="POST")
 
     def update(self, request, pk=None):
         """
-        This method prevent use of put method 
-        """        
+        This method prevent use of put method
+        """
         raise MethodNotAllowed(method="PUT")
 
     def partial_update(self, request, pk=None):
         """
-        This method prevent use of patch method 
-        """        
+        This method prevent use of patch method
+        """
         raise MethodNotAllowed(method="PATCH")
 
     def destroy(self, request, pk=None):
         """
-        This method prevent use of delete method 
-        """        
+        This method prevent use of delete method
+        """
         raise MethodNotAllowed(method="DELETE")
 
     def cash_history(self, request):
@@ -321,7 +321,7 @@ class TransactionLogViewSet(ModelViewSet):
         ...
         Params
         - request: Date to filter data
-        """          
+        """
         registers = self.queryset.filter(
             created_at__lte=request.data.get("date"))
         serializer = self.serializer_class(registers, many=True)

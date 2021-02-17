@@ -9,7 +9,7 @@
 
 # Add files or directories to the blacklist. They should be base names, not
 # paths.
-ignore=third_party,Pipfile.lock,Pipfile,README.md,migrations,db.sqlite3,manage.py,asgi.py,wsgi.py,requirements.txt,main
+ignore=third_party,Pipfile.lock,Pipfile,README.md,migrations,db.sqlite3,manage.py,asgi.py,wsgi.py,requirements.txt,main,docker-compose.yml,docker-compose-deploy.yml,Dockerfile
 
 # Add files or directories matching the regex patterns to the blacklist. The
 # regex matches against base names, not paths.
