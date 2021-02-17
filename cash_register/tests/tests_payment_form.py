@@ -30,8 +30,7 @@ class PaymentFormTestCase(TestCase):
         """Valid test to add Payments."""
 
         response = self.client.post(reverse("payments-list"), {
-            "amount":
-            130000,
+            "amount": 130000,
             "payment_form": [{
                 "quantity": 8,
                 "currency_type": 10000

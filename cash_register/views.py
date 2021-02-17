@@ -201,5 +201,4 @@ class TransactionLogViewSet(ModelViewSet):
         return Response({
             "total_amount": total_amount,
             "logs": serializer.data
-        },
-                        status=status_codes.HTTP_200_OK)
+        }, status=status_codes.HTTP_200_OK)
