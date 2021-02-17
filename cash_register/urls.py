@@ -1,3 +1,5 @@
+"""Cash register urls."""
+
 from django.urls import path, include
 
 # Django Rest Framework
@@ -21,6 +23,6 @@ urlpatterns = [
          name="current-state"),
     path("logs/search-date/",
          TransactionLogViewSet.as_view({"get": "cash_history"}),
-         name="search-date"),         
+         name="search-date"),
     path("", include(router.urls)),
 ]

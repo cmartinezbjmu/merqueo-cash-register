@@ -45,7 +45,7 @@ class PaymentFormTestCase(TestCase):
         }, content_type="application/json")
         response_data = json.loads(response.content)
         self.assertEqual(response_data[0], {
-            'currency_type': 20000,
-            'quantity': 5
+            "currency_type": 20000,
+            "quantity": 5
         })
         self.assertEqual(response.status_code, 201)

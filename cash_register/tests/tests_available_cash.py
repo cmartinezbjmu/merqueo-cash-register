@@ -51,5 +51,5 @@ class CashRegisterTestCase(TestCase):
 
         response = self.client.get(reverse("current-state"), formal="json")
         response_data = json.loads(response.content)
-        self.assertEqual(response_data['total_amount'], 211500)
+        self.assertEqual(response_data["total_amount"], 211500)
         self.assertEqual(response.status_code, 200)

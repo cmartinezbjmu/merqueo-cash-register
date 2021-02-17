@@ -37,3 +37,5 @@ jobs:
           ALLOWED_HOSTS: '*'
           SETTINGS_MODULE: 'main.settings.develop'
           DJANGO_SETTINGS_MODULE: 'main.settings.develop'
+      - name: Coverage
+        run: coverage xml -i           
